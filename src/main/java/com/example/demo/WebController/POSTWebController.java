@@ -9,7 +9,7 @@ import com.example.demo.UseCases.ReservaUseCases;
 import com.example.demo.UseCases.RestaurantUseCases;
 import com.example.demo.UseCases.UsuariUseCases;
 import com.example.demo.DisponibilitatReserva.ValidarReserva;
-import org.apache.commons.io.FilenameUtils;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -86,7 +86,7 @@ public class POSTWebController {
     public String handleFileUpload(@Valid @ModelAttribute("rest") Restaurant rest,@RequestParam("fichero") MultipartFile file, Errors errors, Model model, RedirectAttributes redirectAttributes) {
 
             String currentDate = new SimpleDateFormat("ssmmddMMyyyy").format(new Date());
-    	String name=file.getOriginalFilename().replace(file.getOriginalFilename(), "im" + currentDate + "." + FilenameUtils.getExtension(file.getOriginalFilename()).toLowerCase());
+    	String name=file.getOriginalFilename().replace(file.getOriginalFilename(), "im" + currentDate + "." + file.getOriginalFilename().toLowerCase().substring(file.getOriginalFilename().length()-4, file.getOriginalFilename().length()));
 
         
     	if (errors.hasErrors()) {
