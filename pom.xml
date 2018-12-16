@@ -68,8 +68,8 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <scope>2.5</scope>
-            <version>2.5</version>
+            <scope>2.4</scope>
+            <version>2.4</version>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
